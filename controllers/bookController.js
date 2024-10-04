@@ -41,3 +41,16 @@ exports.getUserBooks=async(req,res)=>{
         res.status(401).json(error)
     }
 }
+
+// delete book
+exports.deleteABookController=async(req,res)=>{
+    console.log("Inside deleteABookController");
+    const {bid}=req.params
+
+    try {
+        const removedBook = await books.findByIdAndDelete({_id:bid})
+        res.status(200).json(removedBook)
+    } catch (error) {
+        res.status(401).json(error)
+    }
+}
