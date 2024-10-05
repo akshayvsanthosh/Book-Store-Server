@@ -8,6 +8,7 @@ const bSServer=express()
 bSServer.use(cors())
 bSServer.use(express.json())
 bSServer.use(router)
+bSServer.use('/uploads',express.static('./uploads'))
 
 const PORT = 3000 || process.env.PORT
 
