@@ -21,6 +21,9 @@ router.post('/addBook',jwtMiddleware,multerMiddleware.fields([
 // get all book
 router.get('/allBooks',jwtMiddleware,bookController.getAllBooksController)
 
+// get home book
+router.get('/homeBooks',jwtMiddleware,bookController.getAllBooksController)
+
 // get user book
 router.get('/userBooks',jwtMiddleware,bookController.getUserBooks)
 

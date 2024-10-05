@@ -42,6 +42,17 @@ exports.getUserBooks=async(req,res)=>{
     }
 }
 
+// home book
+exports.getHomeBooksController=async(req,res)=>{
+    console.log("Inside getHomeBooksController");
+    try {
+        const allBooks = await books.find().limit(3)
+        res.status(200).json(allBooks)
+    } catch (error) {
+        res.status(401).json(error)
+    }
+}
+
 // delete book
 exports.deleteABookController=async(req,res)=>{
     console.log("Inside deleteABookController");
